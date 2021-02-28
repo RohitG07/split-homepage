@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  background-color: aqua;
+  height: 100%;
+  width: 100%;
+}
+
+.split {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.split.left {
+  background-image: url("https://images.unsplash.com/photo-1594016224670-ca997115cb5e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80");
+}
+
+.split.left::before {
+  content: "";
+  background-color: rgba(40, 40, 40, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.split.right {
+  background-image: url("https://images.unsplash.com/photo-1612999428015-b132a34cc01f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1101&q=80");
+}
+
+.split.right::before {
+  content: "";
+  background-color: rgba(30, 114, 108, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.split.left, .split.right, .split.left::before, .split.right::before {
+  transition: all .75s ease-in-out;
+}
+
+.split h1 {
+  position: absolute;
+  color: #fff;
+  font-weight: 800;
+  font-size: 3.5rem;
+  top: 30%;
+}
+
+.btn {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1.3rem 4.5rem;
+  background-color: transparent;
+  text-decoration: none;
+  border: 3.5px solid #fff;
+}
+
+.left .btn:hover {
+  background-color: rgb(235, 62, 62);
+  border-color: rgb(231, 67, 67);
+}
+
+.right .btn:hover {
+  background-color: rgb(46, 193, 204);
+  border-color: rgb(46, 193, 204);
+}
+
+.hover-left .left {
+  width: 72%;
+}
+
+.hover-left .right {
+  width: 28%;
+}
+
+.hover-right .left {
+  width: 28%;
+}
+
+.hover-right .right {
+  width: 72%;
+}
+
+@media (max-width: 768px) {
+  .split h1 {
+    font-size: 2.7rem;
+  }
+
+  .btn {
+    padding: 1rem 1.5rem;
+  }
+} 
